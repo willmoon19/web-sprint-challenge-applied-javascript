@@ -56,14 +56,15 @@ const cardAppender = (selector) => {
   axios
   .get("https://lambda-times-api.herokuapp.com/articles")
   .then((res) => {
-    const artObj = res.data
+    const artObj = res.data.articles
+    // debugger
     const newCards = document.querySelector(selector);
-    artOb => {
+    artObj.forEach((item) => {
       const newArray = item.map((newItem) => {
         return Card(newItem)
       });
-    return newCards.appendChild(newArray);
-    }) 
+    return newCards.appendChild(newArray)
+    })
   })
   .catch((error) => {
     console.log(error)
