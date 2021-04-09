@@ -63,7 +63,7 @@ const cardAppender = (selector) => {
         return Card(newItem)
       });
     return newCards.appendChild(newArray);
-    })
+    }) 
   })
   .catch((error) => {
     console.log(error)
