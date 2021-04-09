@@ -19,6 +19,8 @@ const Tabs = (topics) => {
 const divTab1 = document.createElement("div");
 const divTab2 = document.createElement("div");
 const divTab3 = document.createElement("div");
+const divTab4 = document.createElement("div");
+const divTab5 = document.createElement("div");
 
 divTopics.classList.add("topics");
 divTab1.classList.add("tab");

@@ -26,10 +26,15 @@ const Card = (article) => {
   const divContainer = document.createElement("div");
   const newImage = document.createElement("img");
   const newSpan = document.createElement("span");
+
+  divCard.classList.add("card")
+  divHeadline.classList.add("headline")
+  divAuthor.classList.add("author")
+  divContainer.classList.add("img-container")
   
-  divHeadline.textContent.add(`${article.headline}`);
-  newSpan.textContent.add(`By ${article.authorName}`);
-  newImage.setAttribute("src", `${article.authorPhoto}`);
+  divHeadline.textContent = article.headline;
+  newSpan.textContent = "By " + article.authorName;
+  newImage.setAttribute("src", article.authorPhoto);
   
   divCard.appendChild(divHeadline);
   divCard.appendChild(divAuthor);
@@ -40,6 +45,8 @@ const Card = (article) => {
   divCard.addEventListener("click", (event) => {
     console.log(event.target.divHeadline)
   })
+
+  return divCard
 
 }
 
@@ -56,15 +63,36 @@ const cardAppender = (selector) => {
   axios
   .get("https://lambda-times-api.herokuapp.com/articles")
   .then((res) => {
-    const artObj = res.data.articles
-    // debugger
     const newCards = document.querySelector(selector);
-    artObj.forEach((item) => {
-      const newArray = item.map((newItem) => {
-        return Card(newItem)
-      });
-    return newCards.appendChild(newArray)
-    })
+    const newCard0 = res.data.articles.bootstrap;
+    const newCard1 = res.data.articles.javascript;
+    const newCard2 = res.data.articles.jquery;
+    const newCard3 = res.data.articles.node;
+    const newCard4 = res.data.articles.technology;
+   
+   newCard0.forEach((item) => {
+      newCards.appendChild(Card(item));
+    });
+
+   newCard1.forEach((item) => {
+      newCards.appendChild(Card(item));
+    });
+
+    newCard2.forEach((item) => {
+      newCards.appendChild(Card(item));
+    });
+
+    newCard3.forEach((item) => {
+      newCards.appendChild(Card(item));
+    });
+
+    newCard4.forEach((item) => {
+      newCards.appendChild(Card(item));
+    });
+    
+    return newCards
+
+
   })
   .catch((error) => {
     console.log(error)

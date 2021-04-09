@@ -42,16 +42,19 @@ const headerAppender = (selector) => {
   // It should append the header to the element in the DOM that matches the given selector.
   //
 
-//   console.log(selector)
-//   debugger
-// const headerContainer = document.querySelector(selector)
-//  console.log(headerContainer)
-//   const newHeader = Header("Will", "July 13, 2019", "75");
-// console.log(newHeader)
-//   headerContainer.append(newHeader);
-//   return headerContainer;
+ 
+ 
+  const headerContainer = document.querySelector(".header-container")
+  debugger
+  const newHeader = Header("Will", "July 13, 2019", "75");
+
+  headerContainer.append(newHeader);
+  return headerContainer;
 
  // querySelector returns null
+//  its expecting to be called with an argument
+// so when you invoke headerAppender()  you need to invoke with an argument that is a selector
+// ie a p or div or some class or id like .class or #id
 
 
 }
