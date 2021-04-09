@@ -58,7 +58,7 @@ const cardAppender = (selector) => {
   .then((res) => {
     const artObj = res.data
     const newCards = document.querySelector(selector);
-    artObjad => {
+    artOb => {
       const newArray = item.map((newItem) => {
         return Card(newItem)
       });
