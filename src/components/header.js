@@ -44,8 +44,8 @@ const headerAppender = (selector) => {
 
  
  
-  const headerContainer = document.querySelector(".header-container")
-  debugger
+  const headerContainer = document.querySelector(selector)
+  // debugger
   const newHeader = Header("Will", "July 13, 2019", "75");
 
   headerContainer.append(newHeader);
@@ -55,7 +55,7 @@ const headerAppender = (selector) => {
 //  its expecting to be called with an argument
 // so when you invoke headerAppender()  you need to invoke with an argument that is a selector
 // ie a p or div or some class or id like .class or #id
-
+// could not get to work but I am sure this is right.
 
 }
 
